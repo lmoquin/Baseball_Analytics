@@ -1,0 +1,10 @@
+SELECT teamID, 
+	yearID, 
+	(H+2B+2*3B+3*HR)/AB AS SLG, 
+	(H+BB+HBP)/(AB+BB+HBP+SF) AS OBP,
+	((H+2B+2*3B+3*HR)/AB) + ((H+BB+HBP)/(AB+BB+HBP+SF)) AS OPS,
+	HR
+FROM Teams
+WHERE yearID = 2015
+GROUP BY teamID
+ORDER BY HR DESC
