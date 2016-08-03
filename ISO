@@ -1,0 +1,4 @@
+SELECT playerID, teamID, yearID, ((2B+2*3B+3*HR)/AB) AS ISO
+FROM batting
+WHERE yearID >= 2006 AND AB > 300 AND teamID = 'DET'
+ORDER BY ISO DESC
